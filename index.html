@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Saldo Bancário</title>
+</head>
+<body>
+
+<script>
+    // Define o saldo inicial
+    let saldo = 1000; // Valor inicial do saldo
+
+    // Função para realizar um depósito
+    function depositar(valor) {
+      if (valor > 0) {
+        saldo += valor;
+        console.log("Depósito de R$" + valor + " realizado com sucesso.");
+      } else {
+        console.log("O valor do depósito deve ser positivo.");
+      }
+      console.log("Saldo atual: R$" + saldo);
+    }
+
+    // Função para realizar um saque
+    function sacar(valor) {
+      if (valor > 0 && valor <= saldo) {
+        saldo -= valor;
+        console.log("Saque de R$" + valor + " realizado com sucesso.");
+      } else if (valor > saldo) {
+        console.log("Saldo insuficiente para o saque.");
+      } else {
+        console.log("O valor do saque deve ser positivo.");
+      }
+      console.log("Saldo atual: R$" + saldo);
+    }
+
+    // Exemplos de uso
+    depositar(500); // Adiciona 500 ao saldo
+    sacar(200); // Subtrai 200 do saldo
+    sacar(1500); // Tenta sacar mais do que o saldo disponível
+</script>
+
+</body>
+</html>
